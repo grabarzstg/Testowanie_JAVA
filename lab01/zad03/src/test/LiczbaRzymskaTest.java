@@ -115,7 +115,6 @@ public class LiczbaRzymskaTest {
 			fail("Brak danych testowych");
 		}
 		outputSrc.forEach((k, v) -> {
-			System.out.println(k + v);
 			liczba.setValue(v);
 			assertEquals(k, liczba.toString());
 		});
