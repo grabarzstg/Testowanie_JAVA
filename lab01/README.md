@@ -15,5 +15,12 @@ Zaplanuj i zaimplementuj odpowiednie przypadki testowe (sprawdzające poprawnoś
 **Zadanie 1b**  
 Rozszerz klasę _CalculatorTest_ o przypadek testowy, który zakończy się błędem, gdy przy próbie dzielenia przez 0 nie wystąpi wyjątek typu _ArithmeticException_. 
 
+**Zadanie 2**  
+Napisz klasę _Calculator_, która będzie działała analogicznie do tej z zadania 1, ale będzie wykonywała operacje na liczbach typu _double_. Napisz klasę _CalculatorTest_ (zwróć uwagę na możliwe błędy w zaokrągleniach, jak sobie z tym poradzić?).
+
+**Zadanie 3**  
+Napisz klasę _LiczbaRzymska_, która będzie posiadała jedno _prywatne_ pole zawierające liczbę (zainicjalizowane w konstruktorze) i metodę _toString()_, która będzie zwracała tę samą liczbę zapisaną w rzymskim systemie zapisywania liczb.
+Przed implementacją metody _toString()_ zastanów się jak powinna zachować się ta klasa w różnych przypadkach np. gdy w konstruktorze podano liczbę ujemną.
+Zaimplementuj klasę testującą i odpowiednie przypadki testowe. W tym momencie testy oczywiście zakończą się niepowodzeniem. Zaimplementuj metodę _toString()_ i uruchom ponownie testy. 
 
 Źródło: [Grupa 3I TE 1](https://inf.ug.edu.pl/~jdybiz/taj/index.php)
