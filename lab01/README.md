@@ -1,7 +1,8 @@
 # Laboratorium 1
 
 **Zadanie 1a**  
-Napisz klasę _Calculator_, która będzie dostarczała pięć publicznych metod:
+Napisz klasę _Calculator_, która będzie dostarczała pięć publicznych metod:  
+
     int add(int a, int b)  
     int sub(int a, int b)  
     int multi(int a, in b)  
