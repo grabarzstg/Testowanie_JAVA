@@ -13,7 +13,9 @@ Interfejs należy zaimplementować a następnie przetestować jednostkowo przy u
 
 Kontrakt (specyfikacja) metod:
 1. Metoda `cyfrokrad` działa w ten sposób, że w liczbie przekazanej jako argument usuwa losowo jedną cyfrę. Uwaga: Gdy liczba jest jednocyfrowa metoda zwraca _null_;
+
 2. Metoda `hultajchochla` działa w ten sposób, że losowo zmienia wystąpienia dwóch cyfr w liczbie będącej argumentem. Uwaga Gdy liczba jest jednocyfrowa metoda wyrzuca _NieduanyPsikusException_
+
 3. Metoda `niekształtek` działa w ten sposób, że w zadanej liczbie dokonuje jednej losowej zmiany cyfr wg podanego schematu:
 `3 -> 8`
 `7 -> 1`
