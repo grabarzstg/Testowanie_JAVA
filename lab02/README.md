@@ -25,8 +25,11 @@ Kontrakt (specyfikacja) metod:
   Uwaga: cyfry 3, 7, 6 mogą nie występować w liczbie będącej argumentem, metoda        zwraca wówczas swój argument.
 
 Uwagi ogólne:
+
 1. Przy rozwiązaniu zadania spróbować podejścia _Test Driven Development_ tj. najpierw spróbować napisać kod samych testów a poźniej właściwą impelementację metod. Zazwyczaj takie podejście bardzo pomaga w implementacji.
+
 2. Zastosować wywołania paramteryczne, utworzyć suite, skorzystać z matchers (_JUnit_ wraz z biblioteką _Hamcrest_)
+
 3. Zwrócić uwagę i odpowiednio przetestować przypadki brzegowe - tj. wyrzucane wyjątki lub zwaracane wartości _null_
 
 _Źródło:_ [KLIK](https://inf.ug.edu.pl/~jdybiz/taj/index.php)
