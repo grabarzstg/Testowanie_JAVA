@@ -105,7 +105,7 @@ public class LiczbaRzymskaTest {
 	//Wykorzystanie expected=Exception przy tworzeniu testu
 	@Test(expected=IllegalArgumentException.class)  
 	public void toStringBadInputGreaterTest(){
-		liczba.setValue(5000);
+		liczba.setValue(4000);
 		liczba.toString();
 	}
 	
