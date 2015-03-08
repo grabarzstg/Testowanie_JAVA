@@ -1,16 +1,12 @@
 package test;
 
-import impl.Psikus;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-import org.junit.Test;
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+	CorrectInputTests.class,
+	BadInputTests.class
+	})
 
-public class PsikusTest {
-
-	@Test
-	public void nieksztaltekTest(){
-		System.out.println(Psikus.);
-	}
-	
-}
-
-
+public class PsikusTest {}
