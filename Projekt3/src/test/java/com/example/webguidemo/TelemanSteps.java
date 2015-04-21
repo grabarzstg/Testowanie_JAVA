@@ -4,6 +4,9 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.*;
 
@@ -39,11 +42,12 @@ public class TelemanSteps {
  
     @When("user opens first result")
     public void userClicksOnFirstResult() throws InterruptedException{        
-        pages.find().findElement(By.partialLinkText("[OFFICIAL AUDIO]")).click();
+    pages.find().findElement(By.xpath("//a[@title='STRACHY NA LACHY - Miłosna kontrabanda, a Praga tonie [OFFICIAL AUDIO]']")).click();
+    Thread.sleep(1000);
     }
- 
+    
     @Then("Video page is shown")
     public void videoPageIsShown(){
-       assertEquals("▶ STRACHY NA LACHY - Miłosna kontrabanda, a Praga tonie [OFFICIAL AUDIO] - YouTube", pages.video().getTitle());
+       assertEquals("STRACHY NA LACHY - Miłosna kontrabanda, a Praga tonie [OFFICIAL AUDIO] - YouTube", pages.video().getTitle());
     }	
 }
