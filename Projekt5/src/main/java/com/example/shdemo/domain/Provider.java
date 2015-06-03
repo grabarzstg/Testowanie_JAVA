@@ -10,7 +10,7 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "provider.active", query = "Select p from Provider p where p.active = true"),
-		@NamedQuery(name = "provider.byBrand", query = "Select p from Provider p where p.name = :name")
+		@NamedQuery(name = "provider.byCountry", query = "Select p from Provider p where p.name = :name")
 })
 public class Provider {
 

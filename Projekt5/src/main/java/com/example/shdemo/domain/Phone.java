@@ -14,8 +14,8 @@ import javax.persistence.NamedQuery;
 public class Phone {
 
 	private Long id;
+	private String network;
 	private String brand;
-	private String cpu;
 	private String series;
 	private String model;
 	private Boolean sold = false;
@@ -30,20 +30,20 @@ public class Phone {
 		this.id = id;
 	}
 
+	public String getNetwork() {
+		return network;
+	}
+
+	public void setNetwork(String network) {
+		this.network = network;
+	}
+	
 	public String getBrand() {
 		return brand;
 	}
 
 	public void setBrand(String brand) {
 		this.brand = brand;
-	}
-	
-	public String getCpu() {
-		return cpu;
-	}
-
-	public void setCpu(String cpu) {
-		this.cpu = cpu;
 	}
 
 	public String getSeries() {

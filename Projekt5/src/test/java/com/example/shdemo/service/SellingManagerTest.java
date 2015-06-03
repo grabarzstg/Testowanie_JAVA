@@ -25,32 +25,32 @@ public class SellingManagerTest {
 	@Autowired
 	SellingManager sellingManager;
 
-	private final String NAME_1 = "Ryszard";
-	private final String PESEL_1 = "73031393833";
-	private final String OCCUP_1 = "Handlarz";
+	private final String NAME_1 = "Rafał";
+	private final String PESEL_1 = "13031393832";
+	private final String OCCUP_1 = "Informatyk";
 
-	private final String NAME_2 = "Marian";
-	private final String PESEL_2 = "51021825563";
-	private final String OCCUP_2 = "Stolarz";
+	private final String NAME_2 = "Adam";
+	private final String PESEL_2 = "31021825567";
+	private final String OCCUP_2 = "Sprzedawca";
 
-	private final String CPB_1 = "Intel";
-	private final String CPU_1 = "Pentium III";
-	private final String GPU_1 = "Intel Integrated";
-	private final String HDD_1 = "WD5000MB";
+	private final String PHN_1 = "Orange";
+	private final String PHB_1 = "Nokia";
+	private final String PHS_1 = "Lumia";
+	private final String PHM_1 = "520";
 
-	private final String CPB_2 = "AMD";
-	private final String CPU_2 = "Athlon X2";
-	private final String GPU_2 = "Radeon 4890HD";
-	private final String HDD_2 = "MX42000MB";
+	private final String PHN_2 = "T-Mobile";
+	private final String PHB_2 = "Samsung";
+	private final String PHS_2 = "Galaxy";
+	private final String PHM_2 = "S3";
 
-	private final String CPB_3 = "Intel";
-	private final String CPU_3 = "Atom";
-	private final String GPU_3 = "GeForce 320";
-	private final String HDD_3 = "BC3500GB";
+	private final String PHN_3 = "Orange";
+	private final String PHB_3 = "Microsoft";
+	private final String PHS_3 = "Lumia";
+	private final String PHM_3 = "640";
 	
-	private final String SVN_1 = "Intel";
-	private final String SVS_1 = "Professional";
-	private final String SVC_1 = "33102";
+	private final String PVN_1 = "Orange";
+	private final String PVC_1 = "Poland";
+	private final String SVC_1 = "PL-01";
 	
 	@Test
 	public void addClientCheck() {
@@ -85,19 +85,19 @@ public class SellingManagerTest {
 	public void addComputerCheck() {
 
 		Phone computer = new Phone();
-		computer.setBrand(CPB_1);
-		computer.setCpu(CPU_1);
-		computer.setSeries(GPU_1);
-		computer.setModel(HDD_1);
+		computer.setNetwork(PHN_1);
+		computer.setBrand(PHB_1);
+		computer.setSeries(PHS_1);
+		computer.setModel(PHM_1);
 		// ... other properties here
 
 		Long computerId = sellingManager.addNewPhone(computer);
 
 		Phone retrievedComputer = sellingManager.findPhoneById(computerId);
-		assertEquals(CPB_1, retrievedComputer.getBrand());
-		assertEquals(CPU_1, retrievedComputer.getCpu());
-		assertEquals(GPU_1, retrievedComputer.getSeries());
-		assertEquals(HDD_1, retrievedComputer.getModel());
+		assertEquals(PHN_1, retrievedComputer.getNetwork());
+		assertEquals(PHB_1, retrievedComputer.getBrand());
+		assertEquals(PHS_1, retrievedComputer.getSeries());
+		assertEquals(PHM_1, retrievedComputer.getModel());
 		// ... check other properties here
 
 	}
@@ -115,10 +115,10 @@ public class SellingManagerTest {
 		Customer retrievedCustomer = sellingManager.findCustomerByPesel(PESEL_2);
 
 		Phone computer = new Phone();
-		computer.setBrand(CPB_2);
-		computer.setCpu(CPU_2);
-		computer.setSeries(GPU_2);
-		computer.setModel(HDD_2);
+		computer.setNetwork(PHN_2);
+		computer.setBrand(PHB_2);
+		computer.setSeries(PHS_2);
+		computer.setModel(PHM_2);
 
 		Long computerId = sellingManager.addNewPhone(computer);
 
@@ -127,26 +127,26 @@ public class SellingManagerTest {
 		List<Phone> ownedComputers = sellingManager.getOwnedPhones(retrievedCustomer);
 
 		assertEquals(1, ownedComputers.size());
-		assertEquals(CPB_2, ownedComputers.get(0).getBrand());
-		assertEquals(CPU_2, ownedComputers.get(0).getCpu());
-		assertEquals(GPU_2, ownedComputers.get(0).getSeries());
-		assertEquals(HDD_2, ownedComputers.get(0).getModel());
+		assertEquals(PHN_2, ownedComputers.get(0).getNetwork());
+		assertEquals(PHB_2, ownedComputers.get(0).getBrand());
+		assertEquals(PHS_2, ownedComputers.get(0).getSeries());
+		assertEquals(PHM_2, ownedComputers.get(0).getModel());
 	}
 
 	@Test
 	public void computerServiceCheck() {
 		
 		Phone computer = new Phone();
-		computer.setBrand(CPB_3);
-		computer.setCpu(CPU_3);
-		computer.setSeries(GPU_3);
-		computer.setModel(HDD_3);
+		computer.setNetwork(PHN_3);
+		computer.setBrand(PHB_3);
+		computer.setSeries(PHS_3);
+		computer.setModel(PHM_3);
 
 		sellingManager.addNewPhone(computer);
 		
 		Provider service = new Provider();
-		service.setName(SVN_1);
-		service.setCountry(SVS_1);
+		service.setName(PVN_1);
+		service.setCountry(PVC_1);
 		service.setCode(SVC_1);
 
 		sellingManager.addProvider(service);
@@ -154,7 +154,7 @@ public class SellingManagerTest {
 		List<Provider> availableServices = sellingManager.getAvailableProvider(computer);
 		
 		assertEquals(1, availableServices.size());
-		assertEquals(CPB_3, availableServices.get(0).getName());
+		assertEquals(PHN_3, availableServices.get(0).getName());
 		assertEquals(true, availableServices.get(0).getActive());
 	}
 	
@@ -169,9 +169,9 @@ public class SellingManagerTest {
 		sellingManager.addClient(customer);
 
 		Phone computer = new Phone();
-		computer.setCpu(CPU_2);
-		computer.setSeries(GPU_2);
-		computer.setModel(HDD_2);
+		computer.setBrand(PHB_2);
+		computer.setSeries(PHS_2);
+		computer.setModel(PHM_2);
 
 		Customer retrievedCustomer = sellingManager.findCustomerByPesel(PESEL_2);
 		

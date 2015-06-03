@@ -126,7 +126,7 @@ public class SellingMangerHibernateImpl implements SellingManager {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Provider> getAvailableProvider(Phone phone) {
-		return sessionFactory.getCurrentSession().getNamedQuery("provider.byBrand").setString("name", phone.getBrand()).list();
+		return sessionFactory.getCurrentSession().getNamedQuery("provider.byCountry").setString("name", phone.getNetwork()).list();
 	}
 
 }

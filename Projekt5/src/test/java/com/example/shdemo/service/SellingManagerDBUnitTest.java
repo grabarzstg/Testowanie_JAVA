@@ -42,11 +42,11 @@ public class SellingManagerDBUnitTest {
         assertEquals(2, sellingManager.getAllClients().size());
         
         Customer p = new Customer();
-        p.setName("Stefan");
-        p.setOccupation("Kierowca Rajdowy");
+        p.setName("Jan");
+        p.setOccupation("Spawacz");
         p.setPesel("43020136132");
         Calendar cal = Calendar.getInstance();
-        cal.set(2015, 4, 20);
+        cal.set(2015, 5, 20);
         p.setRegistrationDate(cal.getTime());
         
         sellingManager.addClient(p);
