@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.shdemo.domain.Phone;
 import com.example.shdemo.domain.Customer;
-import com.example.shdemo.domain.Service;
+import com.example.shdemo.domain.Provider;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:/beans.xml" })
@@ -144,14 +144,14 @@ public class SellingManagerTest {
 
 		sellingManager.addNewPhone(computer);
 		
-		Service service = new Service();
+		Provider service = new Provider();
 		service.setName(SVN_1);
-		service.setRenown(SVS_1);
+		service.setCountry(SVS_1);
 		service.setCode(SVC_1);
 
 		sellingManager.addProvider(service);
 
-		List<Service> availableServices = sellingManager.getAvailableProvider(computer);
+		List<Provider> availableServices = sellingManager.getAvailableProvider(computer);
 		
 		assertEquals(1, availableServices.size());
 		assertEquals(CPB_3, availableServices.get(0).getName());

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.shdemo.domain.Phone;
 import com.example.shdemo.domain.Customer;
-import com.example.shdemo.domain.Service;
+import com.example.shdemo.domain.Provider;
 
 @Component
 @Transactional
@@ -118,15 +118,15 @@ public class SellingMangerHibernateImpl implements SellingManager {
 	}
 
 	@Override
-	public void addProvider(Service service) {
-		service.setId(null);
-		sessionFactory.getCurrentSession().persist(service);
+	public void addProvider(Provider provider) {
+		provider.setId(null);
+		sessionFactory.getCurrentSession().persist(provider);
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Service> getAvailableProvider(Phone phone) {
-		return sessionFactory.getCurrentSession().getNamedQuery("service.byBrand").setString("name", phone.getBrand()).list();
+	public List<Provider> getAvailableProvider(Phone phone) {
+		return sessionFactory.getCurrentSession().getNamedQuery("provider.byBrand").setString("name", phone.getBrand()).list();
 	}
 
 }

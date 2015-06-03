@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.shdemo.domain.Phone;
 import com.example.shdemo.domain.Customer;
-import com.example.shdemo.domain.Service;
+import com.example.shdemo.domain.Provider;
 
 public interface SellingManager {
 	
@@ -21,6 +21,6 @@ public interface SellingManager {
 	List<Phone> getOwnedPhones(Customer customer);
 	void sellPhone(Long customerId, Long phoneId);
 
-	void addProvider(Service provider);
-	List<Service> getAvailableProvider(Phone phone);
+	void addProvider(Provider provider);
+	List<Provider> getAvailableProvider(Phone phone);
 }
